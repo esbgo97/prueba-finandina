@@ -1,0 +1,46 @@
+﻿@using AppSite.ClientServiceReference;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Clientes</h2>
+<div>
+    @Html.ActionLink("Agregar Cliente", "Create", "Client", new { @class = "btn btn-success" })
+</div>
+<table class="table table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Documento</th>
+            <th>Nacimiento</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Client client in ViewBag.Clients)
+        {
+            <tr>
+                <td>@client.Id</td>
+                <td>@client.Names</td>
+                <td>@client.LastNames</td>
+                <td>@client.DocNumber</td>
+                <td>@client.Birth</td>
+                <td>@client.IsActive</td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", "Client",client, new { @class = "btn btn-info" })
+                    <button onclick="onDelete(@client.Id)" class = "btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
+
+<script>
+    function onDelete(clientId) {
+        alert(clientId)
+    }
+</script>
+

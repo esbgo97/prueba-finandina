@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE [dbo].[DELETE_CLIENT]
+	@Id INT
+AS
+	DELETE FROM [dbo].[Client]	
+	WHERE [Id] = @Id
+RETURN 0

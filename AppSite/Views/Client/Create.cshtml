@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Agregar Cliente</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label>Nombres:</label>
+        <input type="text" name="Names" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Apellidos:</label>
+        <input type="text" name="LastNames" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Documento:</label>
+        <input type="text" name="DocNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Nacimiento:</label>
+        <input type="date" name="Birth" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Estado:</label><br />
+        Activo:<input name="IsActive" type="radio" value="false" />
+        <br />
+        Inactivo: <input name="IsActive" type="radio" value="true" />
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-success"> Guardar</button>
+        @Html.ActionLink("Cancelar", "Index", "Client", new { @class = "btn btn-danger" })
+    </div>
+</form>
+
